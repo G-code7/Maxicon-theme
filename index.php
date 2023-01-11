@@ -28,7 +28,7 @@
             <option value="python developer">
             <option value="DevOps">
         </datalist>
-        <input type="submit">
+        <input id="input-btn--rm" type="submit">
     </div>
 </main>
 
