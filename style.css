@@ -1,0 +1,669 @@
+/*
+Theme Name: Maxicon Theme
+Theme URI: https://github.com/G-code7
+Author: Gustavo Liendo
+Author URI: g-code7.github.io
+Description: Our default theme for 2020 is designed to take full advantage of the flexibility of the block editor. Organizations and businesses have the ability to create dynamic landing pages with endless layouts using the group and column blocks. The centered content column and fine-tuned typography also makes it perfect for traditional blogs. Complete editor styles give you a good idea of what your content will look like, even before you publish. You can give your site a personal touch by changing the background colors and the accent color in the Customizer. The colors of all elements on your site are automatically calculated based on the colors you pick, ensuring a high, accessible color contrast for your visitors.
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Version: 1.0
+Tested up to: 8.1
+Requires PHP: 8.1.9
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: maxicontheme
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Quicksand:wght@400;500;700&display=swap');
+
+:root {
+    /* colores var*/
+    --just-black: #000;
+    --warm-black: #272727;
+    --black: #656565;
+    --just-white: #FFF;
+    --soft-white: #F5F5F5;
+    --cta-orange: #F3722b;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--soft-white);
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+}
+
+/* temporaly disabled this message is just for me */
+.inactive {
+    display: none;
+}
+
+.header-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 150px;
+    background-color: var(--just-black);
+    color: var(--just-white);
+    align-items: center;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 2px;
+    z-index: 10;
+}
+ .Logo-img {
+    background-image: url(./assets/images/M-logo.png);
+    width: 187px;
+    height: 76px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+
+.nav-bar--header {
+    display: flex;
+    flex-direction: row;
+    font-weight: 400;
+    color: var(--just-white);
+}
+.nav-bar--header a {
+    color: var(--just-white);
+    font-weight: 400;
+    font-size: 1.7rem;
+    text-decoration: none;
+    margin-right: 15px;
+}
+.nav-bar--header a:hover{
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--just-white);
+    transition: all 350ms ease;
+}
+.contac-phone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--cta-orange);
+    font-weight: 600;
+    font-size: 1.9rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.contac-phone:hover{
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--cta-orange, .5);
+    transition: all 350ms ease;
+}
+.phone-ico {
+    background-image: url(./assets/images/phone.ico.png);
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    width: 100%;
+    /* height: 458px; */
+    background-color: var(--warm-black);
+}
+.first-section--container{
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+}
+
+.first-section--container .video-main--container{
+    width: 60%;
+    background-image: url(./assets/images/background-video-index.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.p-main--container {
+    width: 40%;
+    color: var(--just-white);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: 40px 60px;
+}
+
+.p-main--container h1 {
+    font-size: 4.2rem;
+    font-weight: 700;
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 4.6rem;
+    margin-bottom: 20px;
+}
+.p-main--container p {
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 3rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#user-register {
+    width: 100%;
+    height: 48px;
+    color: var(--just-white);
+    background-color: var(--cta-orange);
+    text-transform: uppercase;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.7rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+#user-register:hover {
+    background-color: var(--warm-black);
+    border: 1px solid var(--just-white);
+    transition: all 350ms ease; 
+}
+
+/* cta menu  */
+.register-menu {
+    position: absolute;
+    top: 116px;
+    right: 416px;
+    width: 475px;
+    height: 469px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: var(--just-white);
+    z-index: 15;
+    padding: 0 60px;
+
+}
+.rm-cta--tittle{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.7rem;
+    font-weight: 500;
+    margin-top: 30px;
+    color: var(--cta-orange);
+}
+.register-menu label{
+    align-self: flex-start;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.register-menu input{
+    width: 100%;
+    height: 25px;
+    font-size: 14px;
+    border: 1px solid #bcbcbc;
+}
+
+.paragraph-container {
+    width: 100%;
+    height: 250px;
+    justify-self: center;
+    background-color: var(--soft-white);
+    color: var(--black);
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 4.2rem;
+    text-align: center;
+    padding-top: 100px;
+}
+.divider-container {
+    width: 100%;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    margin: 35px 0;
+}
+.divider-container .divider-line {    
+    background-color: var(--cta-orange);
+    width: 2px;
+    height: 100%;
+
+}
+
+.paragraph-container2 {
+    width: 100%;
+    height: auto;
+    justify-self: center;
+    background-color: var(--soft-white);
+    color: var(--black);
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 4.2rem;
+    text-align: center;
+    padding-top: 100px;
+    margin-bottom: 80px;
+}
+
+.cta-sub-paragraph {
+    font-family: 'Quicksand', sans-serif; 
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2.8rem;
+    text-align: center;
+}
+
+.image_accordion {
+    position: relative;
+    width: 100%;
+    height: 365px;
+    display: table;
+    table-layout: fixed;
+    
+}
+
+ul {
+    list-style: none;
+    height: inherit;
+}
+
+.image_accordion ul li {
+    width: 16.6%;
+    height: inherit;
+    display: table-cell;
+    vertical-align: bottom;
+    position: relative;
+    transition: all 500ms ease;
+}
+
+
+
+.image_accordion ul li:nth-child(1){
+    background-image: url(./assets/images/accordeon-img1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.image_accordion ul li:nth-child(2){
+    background-image: url(./assets/images/accordeon-img2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.image_accordion ul li:nth-child(3){
+    background-image: url(./assets/images/accordeon-img3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.image_accordion ul li:nth-child(4){
+    background-image: url(./assets/images/accordeon-img4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.image_accordion ul li:nth-child(5){
+    background-image: url(./assets/images/accordeon-img5.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.image_accordion ul li:nth-child(6){
+    background-image: url(./assets/images/accordeon-img6.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.image_accordion ul li:nth-child(7){
+    background-image: url(./assets/images/accordeon-img7.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.image_accordion ul:hover li,
+.image_accordion ul:focus-within li {
+    width: 8%;
+}
+
+.image_accordion ul:hover li:hover,
+.image_accordion ul li:focus,
+.image_accordion ul:focus-within li:focus{
+    width: 60%;
+}
+
+.image_accordion ul li:focus {
+    outline: none;
+}
+
+.image_accordion ul li div{
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image_accordion ul li div a{
+    width: 100%;
+    height: 365px;
+    position: relative;
+    padding: 30px;
+    z-index: 3;
+    color: var(--just-white);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;  
+    text-decoration: none;
+    /* justify-content: center; */
+    background: rgba(27, 27, 27, 0.7);
+    background-blend-mode: multiply;
+    cursor: default;
+
+}
+
+.image_accordion ul li div a *{
+    
+    position: relative;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: all 400ms ease; 
+}
+
+.image_accordion ul li div a h2 {
+    font-size: 3rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-overflow: clip;
+    margin-bottom: 25px;
+    writing-mode: vertical-rl;
+}
+
+.image_accordion ul li div a p{
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.1rem;
+    width: 80%;
+    white-space: normal;
+    opacity: 0;
+
+}
+
+.image_accordion ul:hover li:hover a *,
+.image_accordion ul li:focus a * ,
+.image_accordion ul:focus-within li:focus a *{
+    opacity: 1;
+    transform: translateX(0px);
+    writing-mode: horizontal-tb;
+    /* justify-content: center;  */
+}
+
+.image_accordion ul:hover li:hover a * p,
+.image_accordion ul li:focus a * p,
+.image_accordion ul:focus-within li:focus a * p{
+    width: 250px;
+}
+
+.paragraph-container-2 {
+    width: 100%;
+    height: 180px;
+    font-size: 3.3rem;
+    font-weight: 500;
+    line-height: 4.2rem;
+    text-align: center;
+    color: var(--black);
+    background-color: var(--just-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.p-orange {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--cta-orange);
+}
+
+.section-grid-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: var(--black);
+    background-color: var(--soft-white);
+}
+
+.grid-container {
+    width: 80%;
+    height: 250px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100%;
+    align-items: center
+    
+}
+
+/* card images */
+.grid-card {
+    width: 250px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.grid-card .cards-image {
+    width: 97px;
+    height: 100px;
+    margin-bottom: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.grid-card .card-image-1{
+    background-image: url(./assets/images/hands-ico.png);
+}
+.grid-card .card-image-2{
+    background-image: url(./assets/images/head-p-ico.png);
+}
+.grid-card .card-image-3{
+    background-image: url(./assets/images/book-ico.png);
+}
+.grid-card .card-image-4{
+    background-image: url(./assets/images/network-ico.png);
+}
+
+.card-tittle {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+}
+
+.card-button-sqr {
+    background-color: var(--cta-orange);
+    width: 15px;
+    height: 15px;
+}
+
+.card-button-sqr:hover {
+    background-color: var(--just-black);
+    border: 2px solid var(--cta-orange);
+    transition: all 300ms ease;
+}
+
+/* logos grid */
+
+/* class background color / important agrupar .paragraph-container  */
+#paragraph-container--2 {
+    background-color: var(--just-white);
+}
+
+.main-section-4 {
+    width: 100%;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--just-white);
+    margin-bottom: 120px;
+}
+
+.grid-container--2 {
+    width: 90%;
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 100px);
+    align-items: center;
+    
+}
+
+.grid-container--2 .container--logo{
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: auto;
+    height: 90px;
+
+} 
+
+.grid-container--2 .container--logo:hover{
+    scale: 1.2;
+    transition: all 300ms ease;
+
+} 
+.grid-container--2 .logo-img-1 {
+    background-image: url(./assets/images/CED_CIT_Logo_rgb-186x190.png);
+}
+.grid-container--2 .logo-img-2 {
+    background-image: url(./assets/images/EH.png);
+}
+.grid-container--2 .logo-img-3 {
+    background-image: url(./assets/images/COntrol4.png);
+}
+.grid-container--2 .logo-img-4 {
+    background-image: url(./assets/images/Control4\ 2020.png);
+}
+.grid-container--2 .logo-img-5 {
+    background-image: url(./assets/images/Cis.png);
+}
+.grid-container--2 .logo-img-6 {
+    background-image: url(./assets/images/CEPro\ 2021.png);
+}
+.grid-container--2 .logo-img-7 {
+    background-image: url(./assets/images/HTA-Estate-404x190.png);
+}
+.grid-container--2 .logo-img-8 {
+    background-image: url(./assets/images/CEPro\ 2018.png);
+}
+.grid-container--2 .logo-img-9 {
+    background-image: url(./assets/images/Best\ project.png);
+}
+.grid-container--2 .logo-img-10 {
+    background-image: url(./assets/images/100\ cepro.png);
+}
+.grid-container--2 .logo-img-11 {
+    background-image: url(./assets/images/lutron\ 2015.png);
+}
+.grid-container--2 .logo-img-12 {
+    background-image: url(./assets/images/Lutron\ 2021.png);
+}
+
+.main-section--5 {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: nowrap;
+    background-color: var(--soft-white);
+    margin-bottom: 50px;
+}
+
+.grid-container--3 {
+    width: 100%;
+    height: 380px;
+    display: grid;
+    grid-template-columns: repeat(3, 355px);
+    grid-template-rows: 380px;
+    justify-content: center;
+    align-content: center;
+}
+
+.grid-container--3 .cta-card {
+    width: 350px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--just-white);
+}
+.cta-image-card {
+    margin-top: 40px;
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.cta-image-card-1 {
+    background-image: url(./assets/images/phoneico.png);
+}
+.cta-image-card-2 {
+    background-image: url(./assets/images/calendarico.png);
+}
+.cta-image-card-3 {
+    background-image: url(./assets/images/peopleico.png);
+}
+
+.cta-tittle-card {
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 3.2rem;
+    text-align: center;
+    margin-top: 55px;
+
+}
+
+.cta-btn-card{
+    width: 290px;
+    height: 50px;
+    background-color: var(--cta-orange);
+    color: var(--just-white);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.6rem;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 30px;
+
+}
+
+footer {
+    background-color: var(--just-black);
+    width: 100%;
+    height: 150px;
+}
